@@ -31,18 +31,18 @@ public class Croatia_Alphabet {
         int cnt = 0;
         for(int i = 0; i < croatia.length(); i++){
             cnt++;
-            if(croatia.charAt(i)=='='){
+            if(i>=1 && croatia.charAt(i)=='='){     // i값 인덱스 접근 보호 주의
                 if(croatia.charAt(i-1)=='c' || croatia.charAt(i-1)=='s' || croatia.charAt(i-1)=='z'){
                     cnt--;
-                    if(croatia.charAt(i-1)=='z' && croatia.charAt(i-2)=='d'){
+                    if(i>=2 && croatia.charAt(i-1)=='z' && croatia.charAt(i-2)=='d'){
                         cnt--;
                     }
                 }
-            }else if(croatia.charAt(i)=='-'){
+            }else if(i>=1 && croatia.charAt(i)=='-'){
                 if(croatia.charAt(i-1)=='c' || croatia.charAt(i-1)=='d'){
                     cnt--;
                 }
-            }else if(croatia.charAt(i)=='j'){
+            }else if(i>=1 && croatia.charAt(i)=='j'){
                 if (croatia.charAt(i-1)=='l' || croatia.charAt(i-1)=='n') {
                     cnt--;
                 }
