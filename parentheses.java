@@ -25,7 +25,6 @@ public class parentheses {
                     stack.push(str.charAt(j));
                 }else{
                     if(stack.isEmpty()){
-                        //System.out.println("NO1");
                         b = false;
                         break;
                     }else
