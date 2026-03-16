@@ -27,12 +27,10 @@ public class Palindrome {
             arr[k]++;
         }
 
-        //int even = 0;
-        int odd = 0;
-        int odd_alphabe = 0;
+        //홀수개 글자가 2개 이상이라면 종료 
+        int odd = 0; 
         for(int i = 0; i < arr.length; i++){
             if(arr[i]%2==1){
-                odd_alphabe=i;
                 odd++;
                 if(odd>1){
                     System.out.println("I'm Sorry Hansoo");
@@ -41,9 +39,9 @@ public class Palindrome {
             }
         }
 
+        //왼쪽,가운데,오른쪽을 나누어서
         StringBuilder left = new StringBuilder();
         String mid = "";
-
         for(int i = 0; i < 26; i++){
             for(int j = 0; j < arr[i]/2; j++){
                 left.append((char)(i+'A'));
@@ -54,6 +52,7 @@ public class Palindrome {
             }
         }
         StringBuilder right = new StringBuilder(left).reverse();
+        
         System.out.println(left+mid+right);
 
         
