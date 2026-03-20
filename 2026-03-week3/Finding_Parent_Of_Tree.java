@@ -2,6 +2,8 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Finding_Parent_Of_Tree {
@@ -31,7 +33,9 @@ public class Finding_Parent_Of_Tree {
             graph.get(a).add(b);
             graph.get(b).add(a);
         }
+        // dfs OR bfs 둘 중 하나로 쓰면 됨
         dfs(1);
+        bfs(1);
         for(int i = 2; i < parent.length; i++){
             System.out.println(parent[i]);
         }
@@ -42,10 +46,25 @@ public class Finding_Parent_Of_Tree {
         for(int i = 0; i < graph.get(x).size(); i++){
             int y = graph.get(x).get(i);
             if(!visited[y]){
-                if(y-2>=0){ // 범위 주위 => 범위가 마이너스가 될 위험!!
-                    parent[y]=x; 
-                }
+                parent[y]=x; 
                 dfs(y);
+            }
+        }
+    }
+
+    public static void bfs(int x){
+        Queue<Integer> q = new LinkedList<>();
+        q.offer(x);
+        visited[x] = true;
+        while(!q.isEmpty()){
+            int k = q.poll();
+            for(int i = 0; i < graph.get(k).size(); i++){
+                int y = graph.get(k).get(i);
+                if(!visited[y]){
+                    q.offer(y);
+                    parent[y]=k;               
+                    visited[y] = true;
+                }
             }
         }
     }
