@@ -49,7 +49,6 @@ public class Degree_of_Kinship {
         }else{
             System.out.println(degree[y]);
         }
-
         
     }
     public static void bfs(int x){
