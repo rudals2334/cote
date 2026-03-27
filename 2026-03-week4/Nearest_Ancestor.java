@@ -57,12 +57,10 @@ public class Nearest_Ancestor {
                     sb.append(b).append('\n');
                     break;
                 }else{
+                    visited[b] = true;
                     b=family[b];
                 }
-            }
-
-
-           
+            }           
         }
         System.out.println(sb);
         
