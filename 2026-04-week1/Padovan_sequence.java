@@ -1,0 +1,39 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Padovan_sequence {
+// 문제
+// 오른쪽 그림과 같이 삼각형이 나선 모양으로 놓여져 있다. 첫 삼각형은 정삼각형으로 변의 길이는 1이다. 그 다음에는 다음과 같은 과정으로 정삼각형을 계속 추가한다. 
+// 나선에서 가장 긴 변의 길이를 k라 했을 때, 그 변에 길이가 k인 정삼각형을 추가한다.
+// 파도반 수열 P(N)은 나선에 있는 정삼각형의 변의 길이이다. P(1)부터 P(10)까지 첫 10개 숫자는 1, 1, 1, 2, 2, 3, 4, 5, 7, 9이다.
+// N이 주어졌을 때, P(N)을 구하는 프로그램을 작성하시오.
+
+// 입력
+// 첫째 줄에 테스트 케이스의 개수 T가 주어진다. 각 테스트 케이스는 한 줄로 이루어져 있고, N이 주어진다. (1 ≤ N ≤ 100)
+
+// 출력
+// 각 테스트 케이스마다 P(N)을 출력한다. 
+    public static void main(String[] args)throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(br.readLine());
+        for(int i = 0; i < t; i++){
+            int n = Integer.parseInt(br.readLine());
+            long[] padovan = new long[n+1];
+            if(n>=1) padovan[1] = 1;
+            if(n>=2) padovan[2] = 1;
+            if(n>=3) padovan[3] = 1;
+            if(n>=4) padovan[4] = 2;
+            // if(n>=5) padovan[5] = 2;
+            // if(n>=6) padovan[6] = 3;
+            // if(n>=7) padovan[7] = 4;
+            // if(n>=8) padovan[8] = 5;
+            // if(n>=9) padovan[9] = 7;
+            if(n>=10) padovan[10] = 9;
+            for(int j = 5; j <= n; j++){
+                padovan[j] = padovan[j-1] + padovan[j-5];
+            }
+            System.out.println(padovan[n]);
+        }
+        
+    }
+}
