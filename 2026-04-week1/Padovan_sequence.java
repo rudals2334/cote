@@ -23,11 +23,6 @@ public class Padovan_sequence {
             if(n>=2) padovan[2] = 1;
             if(n>=3) padovan[3] = 1;
             if(n>=4) padovan[4] = 2;
-            // if(n>=5) padovan[5] = 2;
-            // if(n>=6) padovan[6] = 3;
-            // if(n>=7) padovan[7] = 4;
-            // if(n>=8) padovan[8] = 5;
-            // if(n>=9) padovan[9] = 7;
             if(n>=10) padovan[10] = 9;
             for(int j = 5; j <= n; j++){
                 padovan[j] = padovan[j-1] + padovan[j-5];
