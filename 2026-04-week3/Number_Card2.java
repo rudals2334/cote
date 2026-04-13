@@ -25,14 +25,6 @@ public class Number_Card2 {
             int compare = Integer.parseInt(st.nextToken());
             sb.append(map.getOrDefault(compare, 0)).append(" ");
         }
-
-        System.out.println(sb);
-        
-
-        
-        
-        
-        
-        
+        System.out.println(sb);   
     }
 }
