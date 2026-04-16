@@ -14,16 +14,25 @@ public class budget {
             team[i] = Integer.parseInt(st.nextToken());
         }
         
-        Arrays.sort(team);
+        Solution solution = new Solution();
+
+        int result = solution.solution(team, budget); 
+        System.out.println(result);
+    }
+
+    static class Solution {
+    public int solution(int[] d, int budget) {
+        Arrays.sort(d);
         int cnt = 0;
-        for(int i = 0; i < n; i++){
-            budget -= team[i];
-            if(budget<0){
+        for(int i = 0; i < d.length; i++){
+            budget -= d[i];
+            if(budget < 0){
                 break;
             }
             cnt++;
         }
-        System.out.println(cnt);
+        return cnt;
     }
+}
     
 }
