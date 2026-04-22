@@ -23,7 +23,6 @@ public class Sort_Frequencies {
             map.put(num, map.getOrDefault(num, 0) + 1);
             if(!map2.containsKey(num)){
                 map2.put(num, i+1);
-
             }
             
         }
