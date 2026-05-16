@@ -32,6 +32,7 @@ class Solution {
         }
         List<String> list = new ArrayList<>(totalMap.keySet());
         Collections.sort(list);
+        
         int[] answer = new int[list.size()];
         for(int i = 0; i < list.size(); i++){
             int total = totalMap.get(list.get(i));
