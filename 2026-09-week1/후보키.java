@@ -12,6 +12,7 @@ class Solution {
         }
         return candidatekeys.size();
     }
+    
     public void dfs(int depth, int start, int target, String[][] relation, List<Integer> selected){
         if(depth == target){
             for(List<Integer> key : candidatekeys){
